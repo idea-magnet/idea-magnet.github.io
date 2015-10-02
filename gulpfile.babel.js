@@ -78,7 +78,7 @@ gulp.task("img", [ "clean:img" ], () => {
 const clone = require("gulp-clone");
 const es = require("event-stream");
 gulp.task("html", [ "clean:html" ], () => {
-	const index = gulp.src("./index.html");
+	const index = gulp.src("./src/index.html");
 	const err404 = index.pipe(clone()).pipe(rename("404.html"));
 	const favicon = gulp.src("./src/img/favicon/favicon.ico");
 	const favicon2 = gulp.src("./src/img/favicon/**/*.{png,xml,json}")
@@ -132,5 +132,6 @@ gulp.task("watch", (callback) => {
 	gulp.watch("./src/js/**/*.{js,jsx}", [ "script" ]);
 	gulp.watch("./src/sass/**/*.{css,scss}", [ "style" ]);
 	gulp.watch("./src/img/**/*.{png,jpg,gif,svg}", [ "img" ]);
+	gulp.watch("./src/**/*.{html,ico}", [ "html" ]);
 	callback();
 });

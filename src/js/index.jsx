@@ -15,8 +15,8 @@ $(function() {
     solveBrowserCompat();
     React.render(
         <Router history={ createBrowserHistory() }>
-            <Route path="/" component={ App }>
-                <IndexRoute component={ HomePage }/>
+            <Route path="/" component={ App } >
+                <IndexRoute component={ HomePage } />
                 <Route path="/*" component={ NoMatchPage } />
             </Route>
         </Router>, document.getElementById("react-app"));

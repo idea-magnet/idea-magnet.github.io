@@ -13,14 +13,14 @@ class App extends React.Component {
     };
     constructor(props) {
         super(props);
-        this.state = { isNavbarOpaque: false };
+        this.state = { isUnderThreshold: false };
         this.scrollHandler = () => {
             const scrollTop = document.documentElement.scrollTop
                 || document.body.scrollTop;
-            if (scrollTop >= SCROLL_THRESHOLD && !this.state.isNavbarOpaque) {
-                this.setState({ isNavbarOpaque: true });
-            } else if (scrollTop < SCROLL_THRESHOLD && this.state.isNavbarOpaque) {
-                this.setState({ isNavbarOpaque: false });
+            if (scrollTop >= SCROLL_THRESHOLD && !this.state.isUnderThreshold) {
+                this.setState({ isUnderThreshold: true });
+            } else if (scrollTop < SCROLL_THRESHOLD && this.state.isUnderThreshold) {
+                this.setState({ isUnderThreshold: false });
             }
         };
     }
@@ -33,7 +33,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="site">
-                <Navbar className={ this.state.isNavbarOpaque ? "navbar-opaque" : "" } />
+                <Navbar className={ this.state.isUnderThreshold ? "navbar-opaque" : "" } />
                 <main className="site-content">
                     { this.props.children }
                 </main>

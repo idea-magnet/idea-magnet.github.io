@@ -1,0 +1,63 @@
+@import "bootstrap/_bootwrap";
+@import "browser-fix";
+
+@import "components/navbar";
+@import "components/footer";
+
+@import "containers/home";
+
+button {
+    a {
+        color: $gray-lightest;
+        text-decoration: none;
+        @include hover-focus {
+            color: $gray-dark;
+            text-decoration: none;
+        }
+        &:focus {
+            @include tab-focus();
+        }
+    }
+}
+
+.non-match-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.non-match-intro {
+    height: 100%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: $gray-dark;
+    padding-top: 9rem;
+    padding-bottom: 1rem;
+    @include media-breakpoint-up(md) {
+        padding-top: 8rem;
+    }
+}
+
+section {
+    background-color: #fefefe;
+    &.parallax-spacer {
+        background: transparent;
+    }
+}
+
+/* Use like this:
+    <body class="Site">
+        <header>…</header>
+        <main class="Site-content">…</main>
+        <footer>…</footer>
+    </body>
+ */
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    .site-content {
+        flex: 1;
+    }
+}
