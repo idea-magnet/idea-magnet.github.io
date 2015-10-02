@@ -1,0 +1,9 @@
+$img-list:
+    url("")
+    url("")
+    url("");
+
+body:after {
+    content: $img-list;
+    display: none;
+}
