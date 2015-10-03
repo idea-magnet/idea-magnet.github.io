@@ -3,6 +3,7 @@
 
 @import "components/navbar";
 @import "components/footer";
+@import "components/idea-form";
 
 @import "containers/home";
 
@@ -20,23 +21,8 @@ button {
     }
 }
 
-.non-match-container {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-}
+.page {
 
-.non-match-intro {
-    height: 100%;
-    font-size: 1.5rem;
-    color: white;
-    background-color: $gray-dark;
-    padding-top: 9rem;
-    padding-bottom: 1rem;
-    @include media-breakpoint-up(md) {
-        padding-top: 8rem;
-    }
 }
 
 section {
@@ -44,15 +30,20 @@ section {
     &.parallax-spacer {
         background: transparent;
     }
+    > .section-heading { margin-bottom: 2rem; }
 }
 
-/* Use like this:
-    <body class="Site">
-        <header>…</header>
-        <main class="Site-content">…</main>
-        <footer>…</footer>
-    </body>
- */
+.jumbotron {
+    margin-bottom: 0;
+}
+
+.label {
+    font-size: .8rem;
+    font-weight: normal;
+    padding: .5rem;
+    margin: .1rem;
+}
+
 .site {
     display: flex;
     min-height: 100vh;

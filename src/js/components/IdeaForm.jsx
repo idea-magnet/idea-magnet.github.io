@@ -9,7 +9,9 @@ class IdeaForm extends React.Component {
     };
     render() {
         return (
-            <section></section>
+            <div>
+                { /* TODO: Form */ }
+            </div>
         );
     }
 }

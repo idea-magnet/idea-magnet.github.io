@@ -80,8 +80,8 @@ const es = require("event-stream");
 gulp.task("html", [ "clean:html" ], () => {
 	const index = gulp.src("./src/index.html");
 	const err404 = index.pipe(clone()).pipe(rename("404.html"));
-	const favicon = gulp.src("./src/img/favicon/favicon.ico");
-	const favicon2 = gulp.src("./src/img/favicon/**/*.{png,xml,json}")
+	const favicon = gulp.src("./src/favicon/favicon.ico");
+	const favicon2 = gulp.src("./src/favicon/**/*.{png,xml,json}")
 		.pipe(rename(function(path) { path.dirname += "/favicon"; }));
 	return es.merge([ index, err404, favicon, favicon2 ])
 		.pipe(gulp.dest("./dist/"))

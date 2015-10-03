@@ -2,27 +2,19 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const SCROLL_THRESHOLD = 360;
+const SCROLL_THRESHOLD = 120;
 
 class App extends React.Component {
     static propTypes = {
         children: React.PropTypes.oneOfType([
                 React.PropTypes.arrayOf(React.PropTypes.node),
                 React.PropTypes.node
-            ])
+            ]),
+        params: React.PropTypes.Object
     };
     constructor(props) {
         super(props);
-        this.state = { isUnderThreshold: false };
-        this.scrollHandler = () => {
-            const scrollTop = document.documentElement.scrollTop
-                || document.body.scrollTop;
-            if (scrollTop >= SCROLL_THRESHOLD && !this.state.isUnderThreshold) {
-                this.setState({ isUnderThreshold: true });
-            } else if (scrollTop < SCROLL_THRESHOLD && this.state.isUnderThreshold) {
-                this.setState({ isUnderThreshold: false });
-            }
-        };
+        this.state = { isNavbarOpaque: false };
     }
     componentDidMount() {
         document.addEventListener("scroll", this.scrollHandler, false);
@@ -33,13 +25,27 @@ class App extends React.Component {
     render() {
         return (
             <div className="site">
-                <Navbar className={ this.state.isUnderThreshold ? "navbar-opaque" : "" } />
+                <Navbar className={ this.shouldNavbarBeOpaque() ?
+                        "navbar-opaque" : "" } />
                 <main className="site-content">
                     { this.props.children }
                 </main>
                 <Footer />
             </div>
         );
+    }
+    scrollHandler = () => {
+        const scrollTop = document.documentElement.scrollTop
+            || document.body.scrollTop;
+        if (scrollTop >= SCROLL_THRESHOLD && !this.state.isNavbarOpaque) {
+            this.setState({ isNavbarOpaque: true });
+        } else if (scrollTop < SCROLL_THRESHOLD && this.state.isNavbarOpaque) {
+            this.setState({ isNavbarOpaque: false });
+        }
+    };
+    shouldNavbarBeOpaque = () => {
+        return this.state.isNavbarOpaque
+            && !Object.keys(this.props.params).length;
     }
 }
 

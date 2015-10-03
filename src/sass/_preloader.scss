@@ -1,7 +1,6 @@
 $img-list:
-    url("")
-    url("")
-    url("");
+    url("/img/logo-white.png")
+    url("/img/logo.png");
 
 body:after {
     content: $img-list;
