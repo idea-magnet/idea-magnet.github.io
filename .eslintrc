@@ -35,6 +35,7 @@
         "jquery": true,
         "browser": true
     },
+    "parser": "babel-eslint",
     "extends": "defaults/configurations/airbnb",
     "ecmaFeatures": {
         "jsx": true,

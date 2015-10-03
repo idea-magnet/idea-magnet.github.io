@@ -9,14 +9,9 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.js?$/,
-				exclude: /(node_modules)/,
-				loader: "uglify-loader"
-			},
-			{
 				test: /\.jsx?$/,
 				exclude: /(node_modules)/,
-				loader: "uglify-loader!babel?stage=0&optional[]=runtime"
+				loader: "babel?stage=0&optional[]=runtime"
 			}
 		]
 	},
