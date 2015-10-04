@@ -35,3 +35,46 @@
         }
     }
 }
+
+.col-img-home {
+    margin-top: 1rem;
+    width: 12rem;
+    @include media-breakpoint-up(sm) { width: 12rem; }
+    @include media-breakpoint-up(md) { width: 10rem; }
+    @include media-breakpoint-up(lg) { width: 12rem; }
+    @include media-breakpoint-up(xl) { width: 14rem; }
+}
+
+.jumbotron-vision {
+    border-radius: 0;
+    color: white;
+    background-image: url("/img/pattern.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.label-outline {
+    padding: .8rem !important;
+    font-size: 1rem !important;
+    border: solid 0.0625rem #ED5454;
+    color: #ED5454;
+    background-color: none;
+}
+
+.banner {
+    &-sentence {
+        font-size: 1.2rem;
+        @include media-breakpoint-up(sm) { font-size: 1.4rem; }
+        @include media-breakpoint-up(md) { font-size: 1.6rem; }
+        @include media-breakpoint-up(lg) { font-size: 1.8rem; }
+        @include media-breakpoint-up(xl) { font-size: 2.0rem; }
+    }
+    &-img {
+        width: 100%;
+        @include media-breakpoint-up(sm) { width: 28rem; }
+        @include media-breakpoint-up(md) { width: 36rem; }
+        @include media-breakpoint-up(lg) { width: 40rem; }
+        @include media-breakpoint-up(xl) { width: 45rem; }
+    }
+}

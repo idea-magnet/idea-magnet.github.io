@@ -4,13 +4,16 @@
     transition: all .5s;
     -webkit-backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
-
-    .container { padding: 0; }
+    
     .navbar-brand .navbar-brand-img {
         height: 2.4rem;
         width: 2.4rem * 480 / 90;
         margin-top: 2rem;
         transition: all .5s ease-in-out;
+
+        -webkit-backface-visibility: hidden;
+        -webkit-transform-style: preserve-3d;
+
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -35,36 +38,36 @@
     outline: none;
 }
 
-.navbar-toggleable-xs {
-    @include media-breakpoint-down(xs) {
-        margin-top: 3rem;
-        margin-right: -3rem;
-    }
-    .navbar-nav {
-        border: none;
-        @include media-breakpoint-down(xs) {
-            text-align: right;
-            border: solid 0.0625rem $gray-lighter;
-        }
-        .nav-item {
-            padding-left: 0.7rem;
-            @include media-breakpoint-down(xs) {
-                float: none;
-                margin-left: 0;
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-                background-color: $gray-lightest;
-            }
-        }
-        a {
-            color: $gray;
-            text-decoration: none;
-            @include hover-focus {
-                color: $gray;
-            }
-            &:focus {
-                @include tab-focus();
-            }
-        }
-    }
-}
+// .navbar-toggleable-xs {
+//     @include media-breakpoint-down(xs) {
+//         margin-top: 3rem;
+//         margin-right: -3rem;
+//     }
+//     .navbar-nav {
+//         border: none;
+//         @include media-breakpoint-down(xs) {
+//             text-align: right;
+//             border: solid 0.0625rem $gray-lighter;
+//         }
+//         .nav-item {
+//             padding-left: 0.7rem;
+//             @include media-breakpoint-down(xs) {
+//                 float: none;
+//                 margin-left: 0;
+//                 padding-left: 1.5rem;
+//                 padding-right: 1.5rem;
+//                 background-color: $gray-lightest;
+//             }
+//         }
+//         a {
+//             color: $gray;
+//             text-decoration: none;
+//             @include hover-focus {
+//                 color: $gray;
+//             }
+//             &:focus {
+//                 @include tab-focus();
+//             }
+//         }
+//     }
+// }

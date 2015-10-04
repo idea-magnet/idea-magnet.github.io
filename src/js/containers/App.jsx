@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const SCROLL_THRESHOLD = 120;
+const SCROLL_THRESHOLD = 240;
 
 class App extends React.Component {
     static propTypes = {
