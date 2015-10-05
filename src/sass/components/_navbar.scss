@@ -4,7 +4,7 @@
     transition: all .5s;
     -webkit-backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
-    
+
     .navbar-brand .navbar-brand-img {
         height: 2.4rem;
         width: 2.4rem * 480 / 90;
@@ -30,6 +30,11 @@
             width: 1.8rem * 480 / 90;
             margin-top: 0;
         }
+    }
+
+    &.preload {
+        transition: none !important;
+        .navbar-brand .navbar-brand-img { transition: none !important; }
     }
 }
 

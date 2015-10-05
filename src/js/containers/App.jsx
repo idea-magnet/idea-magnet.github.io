@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const SCROLL_THRESHOLD = 240;
+const SCROLL_THRESHOLD = 200;
 
 class App extends React.Component {
     static propTypes = {
@@ -15,6 +15,8 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = { isNavbarOpaque: false };
+        this.state = { isAnimationEnabled: false };
+        setTimeout(() => { this.state = { isAnimationEnabled: true }; }, 100);
     }
     componentDidMount() {
         document.addEventListener("scroll", this.scrollHandler, false);
@@ -25,8 +27,10 @@ class App extends React.Component {
     render() {
         return (
             <div className="site">
-                <Navbar className={ this.shouldNavbarBeOpaque() ?
-                        "navbar-opaque" : "" } />
+                <Navbar className={
+                        (this.state.isAnimationEnabled ? "" : "preload ") +
+                        (this.shouldNavbarBeOpaque() ? "navbar-opaque" : "")
+                    } />
                 <main className="site-content">
                     { this.props.children }
                 </main>

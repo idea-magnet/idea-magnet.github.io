@@ -80,10 +80,11 @@ const es = require("event-stream");
 gulp.task("html", [ "clean:html" ], () => {
 	const index = gulp.src("./src/index.html");
 	const err404 = index.pipe(clone()).pipe(rename("404.html"));
+	const cname = gulp.src("./src/CNAME");
 	const favicon = gulp.src("./src/favicon/favicon.ico");
 	const favicon2 = gulp.src("./src/favicon/**/*.{png,xml,json}")
 		.pipe(rename(function(path) { path.dirname += "/favicon"; }));
-	return es.merge([ index, err404, favicon, favicon2 ])
+	return es.merge([ index, err404, cname, favicon, favicon2 ])
 		.pipe(gulp.dest("./dist/"))
 		.pipe(connect.reload())
 		.pipe(notify(notiOpts("HTML is built!", true)));

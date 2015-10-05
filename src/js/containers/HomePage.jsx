@@ -48,38 +48,32 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                 </section>
-                <section className="container p-y-lg">
+                <section className="container p-t-lg">
                     <h4 className="text-center m-b-md">How it works</h4>
-                    <div className="row text-center m-b-md">
-                        <div className="col-xs-12 col-lg-6">
+                    <div className="row text-center">
+                        <div className="col-xs-12 col-lg-6 m-b-lg">
                             <h5>1. Got a brilliant idea? Post your idea here!</h5>
                             <img className="col-img-home"
-                                src="/img/chat.png" />
+                                src="/img/how-idea.png" />
                         </div>
-                        <div className="col-xs-12 col-lg-6">
+                        <div className="col-xs-12 col-lg-6 m-b-lg">
                             <h5>2. We make it visible to potential partners</h5>
                             <img className="col-img-home"
-                                src="/img/chat.png" />
+                                src="/img/how-promote.png" />
                         </div>
-                        <div className="col-xs-12 col-lg-6">
+                        <div className="col-xs-12 col-lg-6 m-b-lg">
                             <h5>3. We gather the info of interested partners for you</h5>
                             <img className="col-img-home"
-                                src="/img/chat.png" />
+                                src="/img/how-info.png" />
                         </div>
-                        <div className="col-xs-12 col-lg-6">
+                        <div className="col-xs-12 col-lg-6 m-b-lg">
                             <h5>4. "Date" potential partners to see if she/he matches</h5>
                             <img className="col-img-home"
-                                src="/img/chat.png" />
+                                src="/img/how-meet.png" />
                         </div>
                     </div>
                 </section>
-                <section className="jumbotron jumbotron-vision">
-                    <div className="container text-center">
-                        <p className="banner-sentence m-b-md">Your team is waiting for you!</p>
-                        <img className="banner-img" src="/img/team.png" />
-                    </div>
-                </section>
-                <section className="container p-y-lg">
+                <section className="container p-t p-b-lg">
                     <h4 className="text-center m-b-md">Your idea can be a...</h4>
                     <div className="text-center m-b-md">
                         <span className="label label-outline">Startup Idea</span>
@@ -91,7 +85,13 @@ class HomePage extends React.Component {
                         <span className="label label-outline">...</span>
                     </div>
                 </section>
-                <section className="container">
+                <section className="jumbotron jumbotron-vision">
+                    <div className="container text-center">
+                        <p className="banner-sentence m-b-md">Your team is waiting for you!</p>
+                        <img className="banner-img" src="/img/team.png" />
+                    </div>
+                </section>
+                <section className="container p-y-lg">
                     <h4 className="text-center m-b-md">Why hesitate? Post your idea now!</h4>
                     <IdeaForm />
                 </section>
