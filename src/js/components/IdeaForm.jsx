@@ -10,7 +10,7 @@ class IdeaForm extends React.Component {
     render() {
         return (
             <div>
-              <form action="https://docs.google.com/forms/d/16loz9r2dMkNFYe7pCaAyvnmpfkFuC73n-l2IGy1OCSs/formResponse" method="POST" id="ss-form" target="_self">
+              <form method="POST" id="ss-form" target="_self">
         <ol role="list" className="ss-question-list" style={{paddingLeft: 0}}>
           <div className="ss-form-question errorbox-good" role="listitem">
             <div dir="auto" className="ss-item ss-item-required ss-text">
