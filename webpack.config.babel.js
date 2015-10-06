@@ -10,7 +10,7 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.jsx?$/,
-				exclude: /(node_modules)/,
+				exclude: /(?!node_modules\/formsy\-react)node_modules/,
 				loader: "babel?stage=0&optional[]=runtime"
 			}
 		]

@@ -32,20 +32,91 @@ class InputName extends React.Component {
         return (
             <div className="form-group row">
                 <label htmlFor="entry_434090862"
-                    className="col-xs-12 col-sm-3 col-md-2 col-lg-push-2 col-lg-2 form-control-label">Name*</label>
+                    className="col-xs-12 col-sm-3 col-md-2 col-lg-push-2 col-lg-2 form-control-label">Name</label>
                 <div className="col-xs-12 col-sm-9 col-md-10 col-lg-push-2 col-lg-7">
                     <input type="text"
                         id="entry_434090862"
-                        className="form-control"
                         name="entry.434090862"
+                        className="form-control"
                         placeholder="Idea Name"
                         value={this.props.getValue()}
                         onChange={(e) => this.props.setValue(e.target.value)}
-                        validations="isEmptyString"
-                        validationError="This is not a valid email"
                         required />
+                    <p className="help-block text-muted"><small>{ !this.props.showRequired() || "This field is required" }</small></p>
                 </div>
-                <p className="help-block text-muted"><small>{ this.props.getErrorMessage() }</small></p>
+            </div>
+        );
+    }
+}
+
+@FormsyElement()
+class InputHeadline extends React.Component {
+    render() {
+        return (
+            <div className="form-group row">
+                <label htmlFor="entry_1528002768"
+                    className="col-xs-12 col-sm-3 col-md-2 col-lg-push-2 col-lg-2 form-control-label">Headline</label>
+                <div className="col-xs-12 col-sm-9 col-md-10 col-lg-push-2 col-lg-7">
+                    <input type="text"
+                        id="entry_1528002768"
+                        name="entry.1528002768"
+                        className="form-control"
+                        placeholder="Headline"
+                        value={this.props.getValue()}
+                        onChange={(e) => this.props.setValue(e.target.value)}
+                        required />
+                    <p className="help-block text-muted"><small>
+                        { this.props.showRequired() ? "This field is required" : "A short sentence about your idea." }
+                    </small></p>
+                </div>
+            </div>
+        );
+    }
+}
+
+@FormsyElement()
+class InputCategory extends React.Component {
+    render() {
+        return (
+            <div className="form-group row">
+                <label htmlFor="entry_153174159"
+                    className="col-xs-12 col-sm-3 col-md-2 col-lg-push-2 col-lg-2 form-control-label">Category</label>
+                <div className="col-xs-12 col-sm-9 col-md-10 col-lg-push-2 col-lg-7">
+                    <ReactSelect id="entry_153174159"
+                        name="entry.153174159"
+                        options={categoryOptions}
+                        placeholder="Category"
+                        value={this.props.getValue()}
+                        onChange={(newValue) => this.props.setValue(newValue)} />
+                    <p className="help-block text-muted"><small>
+                        { !this.props.showRequired() || "This field is required" }
+                    </small></p>
+                </div>
+            </div>
+        );
+    }
+}
+
+@FormsyElement()
+class InputDescription extends React.Component {
+    render() {
+        return (
+            <div className="form-group row">
+                <label htmlFor="entry_683747925"
+                    className="col-xs-12 col-sm-3 col-md-2 col-lg-push-2 col-lg-2 form-control-label">Description</label>
+                <div className="col-xs-12 col-sm-9 col-md-10 col-lg-push-2 col-lg-7">
+                    <textarea id="entry_683747925"
+                        name="entry.683747925"
+                        className="form-control"
+                        rows={7}
+                        placeholder="Description"
+                        value={this.props.getValue()}
+                        onChange={(e) => this.props.setValue(e.target.value)}
+                        required />
+                    <p className="help-block text-muted"><small>
+                        { this.props.showRequired() ? "This field is required" : "A short sentence about your idea." }
+                    </small></p>
+                </div>
             </div>
         );
     }
@@ -64,61 +135,17 @@ class IdeaForm extends React.Component {
     }
     render() {
         return (
-            <Form
-                onSubmit={this.submit}
+            <Form onSubmit={this.submit}
                 onValid={this.enableButton}
                 onInvalid={this.disableButton}
                 action="https://docs.google.com/forms/d/16loz9r2dMkNFYe7pCaAyvnmpfkFuC73n-l2IGy1OCSs/formResponse"
                 method="POST"
-                target="_self">
+                target="_blank">
 
-                <InputName />
-
-                <div className="form-group row">
-                    <label htmlFor="entry_1528002768"
-                        className="col-xs-12 col-sm-3 col-md-2 col-lg-push-2 col-lg-2 form-control-label">Headline*</label>
-                    <div className="col-xs-12 col-sm-9 col-md-10 col-lg-push-2 col-lg-7">
-                        <input type="text"
-                            id="entry_1528002768"
-                            className="form-control"
-                            name="entry.1528002768"
-                            placeholder="Headline"
-                            validations="isEmptyString"
-                            validationError="This is not a valid email"
-                            required />
-                        <p className="help-block text-muted"><small>A short sentence about your idea.</small></p>
-                    </div>
-                </div>
-
-                <div className="form-group row">
-                    <label htmlFor="entry_153174159"
-                        className="col-xs-12 col-sm-3 col-md-2 col-lg-push-2 col-lg-2 form-control-label">Category*</label>
-                    <div className="col-xs-12 col-sm-9 col-md-10 col-lg-push-2 col-lg-7">
-                        <ReactSelect id="entry_153174159"
-                            name="entry.153174159"
-                            value=""
-                            options={categoryOptions}
-                            placeholder="Category"
-                            validations="isEmptyString"
-                            validationError="This is not a valid email"
-                            required />
-                    </div>
-                </div>
-
-                <div className="form-group row">
-                    <label htmlFor="entry_683747925"
-                        className="col-xs-12 col-sm-3 col-md-2 col-lg-push-2 col-lg-2 form-control-label">Description*</label>
-                    <div className="col-xs-12 col-sm-9 col-md-10 col-lg-push-2 col-lg-7">
-                        <textarea id="entry_683747925"
-                            className="form-control"
-                            name="entry.683747925"
-                            rows={8}
-                            placeholder="Description"
-                            validations="isEmptyString"
-                            validationError="This is not a valid email"
-                            required />
-                    </div>
-                </div>
+                <InputName name="entry.434090862" required />
+                <InputHeadline name="entry.1528002768" required />
+                <InputCategory name="entry.153174159" required />
+                <InputDescription name="entry.683747925" validations="minLength:10" required />
 
                 <div className="form-group row">
                     <label htmlFor="entry_1102303679"
@@ -173,8 +200,8 @@ class IdeaForm extends React.Component {
         );
     }
     submit() { }
-    enableButton() { this.setState({ canSubmit: true }); }
-    disableButton() { this.setState({ canSubmit: false }); }
+    enableButton = () => { this.setState({ canSubmit: true }); }
+    disableButton = () => { this.setState({ canSubmit: false }); }
 }
 
 export default IdeaForm;
