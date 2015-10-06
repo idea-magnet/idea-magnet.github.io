@@ -11,12 +11,13 @@
   },
   "dependencies": {
     "bootstrap": "git+ssh://git@github.com/twbs/bootstrap.git#v4.0.0-alpha",
-    "history": "^1.11.1",
+    "formsy-react": "^0.14.1",
+    "history": "^1.12.1",
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "react": "^0.13.3",
     "react-router": "^1.0.0-rc1",
-    "react-select": "^0.6.12"
+    "react-select": "^0.6.11"
   },
   "devDependencies": {
     "babel": "^5.8.23",

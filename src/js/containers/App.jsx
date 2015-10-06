@@ -10,13 +10,13 @@ class App extends React.Component {
                 React.PropTypes.arrayOf(React.PropTypes.node),
                 React.PropTypes.node
             ]),
-        params: React.PropTypes.Object
+        params: React.PropTypes.object
     };
     constructor(props) {
         super(props);
         this.state = { isNavbarOpaque: false };
         this.state = { isAnimationEnabled: false };
-        setTimeout(() => { this.state = { isAnimationEnabled: true }; }, 100);
+        setTimeout(() => { this.state = { isAnimationEnabled: true }; }, 200);
     }
     componentDidMount() {
         document.addEventListener("scroll", this.scrollHandler, false);

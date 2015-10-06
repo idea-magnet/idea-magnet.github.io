@@ -17,16 +17,16 @@ module.exports = {
 	},
 	devtool: "#source-map",
 	plugins: [
-		new webpack.DefinePlugin({
-			"process.env": { "NODE_ENV": JSON.stringify("production") }
-		}),
-		new webpack.optimize.DedupePlugin(),
-		new webpack.optimize.AggressiveMergingPlugin(),
-		new webpack.optimize.UglifyJsPlugin({
-			mangle: true,
-			minimize: true,
-			compress: { warnings: false }
-		}),
+		// new webpack.DefinePlugin({
+		// 	"process.env": { "NODE_ENV": JSON.stringify("production") }
+		// }),
+		// new webpack.optimize.DedupePlugin(),
+		// new webpack.optimize.AggressiveMergingPlugin(),
+		// new webpack.optimize.UglifyJsPlugin({
+		// 	mangle: true,
+		// 	minimize: true,
+		// 	compress: { warnings: false }
+		// }),
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery",
