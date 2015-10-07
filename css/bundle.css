@@ -5691,16 +5691,16 @@ a.bg-danger:focus {
   background-image: url("/img/workplace4.png");
   padding-top: 3.2rem;
   width: 100%;
-  height: 16rem; }
+  height: 20rem; }
   @media (min-width: 34em) {
     .home-cover {
-      height: 20rem; } }
+      height: 22rem; } }
   @media (min-width: 48em) {
     .home-cover {
       height: 24rem; } }
   @media (min-width: 62em) {
     .home-cover {
-      height: 30rem; } }
+      height: 28rem; } }
   .home-cover-content {
     text-align: center;
     color: #eceeef;
@@ -5808,6 +5808,9 @@ section {
     background: transparent; }
   section > .section-heading {
     margin-bottom: 2rem; }
+
+.help-block {
+  margin-bottom: 0; }
 
 .jumbotron {
   margin-bottom: 0; }
