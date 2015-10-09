@@ -5672,6 +5672,13 @@ a.bg-danger:focus {
   to {
     -webkit-transform: rotate(1turn); } }
 
+.btn-share-idea {
+  position: fixed;
+  right: 1rem;
+  top: .4rem;
+  z-index: 1030;
+  outline: none !important; }
+
 .home-cover {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5787,6 +5794,9 @@ a.bg-danger:focus {
     .banner-img {
       width: 45rem; } }
 
+.page-terms {
+  margin-top: 6rem; }
+
 button a {
   color: #f7f7f9;
   text-decoration: none; }
@@ -5804,8 +5814,6 @@ button a {
 
 section {
   background-color: #fefefe; }
-  section.parallax-spacer {
-    background: transparent; }
   section > .section-heading {
     margin-bottom: 2rem; }
 
